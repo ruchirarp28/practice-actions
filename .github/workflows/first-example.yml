@@ -2,15 +2,18 @@ name: My First Workflow
 
 on: push
 
+env:
+  USER_NAME: Jane
+
 jobs:
     first_job:
         runs-on: ubuntu-latest
         steps:
-        - name: Chcekout Repo
+        - name: Checkout Repo
           uses: actions/checkout@v4
           
         - name: Welcome message
-          run: echo "Hello GitHub Actions"
+          run: echo "Hello GitHub Actions, This is ${{env.USER_NAME}}"
 
         - name: List files
           run: ls
