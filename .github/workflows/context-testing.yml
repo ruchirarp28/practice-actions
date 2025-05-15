@@ -1,0 +1,12 @@
+name: Context Testing
+on: push
+
+jobs:
+    dump_context:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Dump Runner Context
+              env:
+                RUNNER_CONTEXT: ${{ toJson(runner) }}
+              run: echo "$RUNNER_CONTEXT"
+        
