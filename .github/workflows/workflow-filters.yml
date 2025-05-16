@@ -5,7 +5,7 @@ on:
   push:
     branches:
       - main
-      - '!feature/*'  # ignoring pushing to any branch name starting with feature using !
+      - '!feature/*'    # ignoring pushing to any branch name starting with feature using !
     # branches-ignore:
     #   - feature/*.    # feature/updateImages
     #   - test/**       # test/ui/index
@@ -13,10 +13,10 @@ on:
     types:
       - opened
       - closed
-    paths-ignore:
-      - README.md    # workflow will only run when a pull request that indicates a change on any file other tham README.md
+    paths-ignore:      # workflow will only run when a pull request that indicates a change on any file other tham README.md
+      - README.md    
     branches:
-      - main          # condfigures your workflow to only run on pull request that taerget specific branches.
+      - main           # configures your workflow to only run on pull request that taerget specific branches.
 
 jobs:
     hello:
