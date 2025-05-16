@@ -14,7 +14,8 @@ on:
       - opened
       - closed
     paths-ignore:      # workflow will only run when a pull request that indicates a change on any file other tham README.md
-      - README.md    
+      - README.md
+      - '.github/workflows/*'    
     branches:
       - main           # configures your workflow to only run on pull request that taerget specific branches.
 
