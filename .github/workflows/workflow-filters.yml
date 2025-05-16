@@ -1,0 +1,28 @@
+name: Workflow filters and activities
+
+on: 
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - '!feature/*'    # ignoring pushing to any branch name starting with feature using !
+    # branches-ignore:
+    #   - feature/*.    # feature/updateImages
+    #   - test/**       # test/ui/index
+  pull_request:
+    types:
+      - opened
+      - closed
+    paths-ignore:      # workflow will only run when a pull request that indicates a change on any file other tham README.md
+      - README.md
+      - '.github/workflows/*'    
+    branches:
+      - main           # configures your workflow to only run on pull request that taerget specific branches.
+
+jobs:
+    hello:
+        runs-on: ubuntu-latest
+        steps:      
+        - name: Welcome Message
+          run: echo this workflow/job/steap is executed for event type - ${{ github.event_name }}
+
