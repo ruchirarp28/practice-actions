@@ -1,2 +1,2 @@
 # practice-actions
-Exploring GitHUb Actions
+Exploring GitHub Actions
