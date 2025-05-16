@@ -6,9 +6,9 @@ on:
     branches:
       - main
       - '!feature/*'  # ignoring pushing to any branch name starting with feature using !
-    branches-ignore:
-      - feature/*.    # feature/updateImages
-      - test/**       # test/ui/index
+    # branches-ignore:
+    #   - feature/*.    # feature/updateImages
+    #   - test/**       # test/ui/index
   pull_request:
     types:
       - opened
