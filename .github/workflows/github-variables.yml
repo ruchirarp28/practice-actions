@@ -1,7 +1,6 @@
 name: Test GitHub variables
 
-on: 
-  push:
+on:
   workflow_dispatch:
 
 jobs:
