@@ -1,0 +1,20 @@
+name: Caller workflow
+
+on:
+    push
+
+jobs:
+    caller-job:
+        uses: ./.github/workflows/reusable-called.yml
+        secrets:
+            secret1: "GitHub Actions"
+        with:
+            input1: "dev"
+        
+    output-job:
+        needs: caller-job
+        runs-on: ubuntu-latest
+        steps:
+            - name: Print Output
+              run: |
+                echo ${{ needs.caller-job.outputs.output1 }}

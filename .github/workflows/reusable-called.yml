@@ -1,0 +1,31 @@
+name: Reusable workflow
+
+on:
+  workflow_call:
+    inputs:
+      input1:
+        required: true
+        type: string
+      input2:
+        description: Input of the caller workflow
+        default: "Hello World"
+        required: false
+        type: string
+    secrets:
+      secret1: 
+        required: true
+    outputs:
+      output1:
+        value: ${{ jobs.reuse-job.outputs.output_job}}
+
+jobs:
+  reuse-job:
+    runs-on: ubuntu-latest
+    environment:
+      name: ${{inputs.input1}}
+    steps:
+      - name: Input Message
+        run: |
+          echo "output_job=${{inputs.input2}} ${{secrets.secret1}}" >> $GITHUB_OUTPUT
+      
+       
