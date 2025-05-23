@@ -24,7 +24,7 @@ jobs:
     environment:
       name: ${{inputs.input1}}
     outputs:
-      output1: ${{ steps.step1.outputs.output_job }}
+      output_job: ${{ steps.step1.outputs.output_job }}
     steps:
       - name: Input Message
         id: step1
