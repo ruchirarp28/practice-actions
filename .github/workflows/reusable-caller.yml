@@ -19,4 +19,4 @@ jobs:
               env:
                 OUTPUT1: ${{needs.caller-job.outputs.output1}}
               run: |
-                echo "OUTPUT1"
+                echo OUTPUT1
