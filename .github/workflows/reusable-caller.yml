@@ -16,5 +16,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Print Output
+              env:
+                OUTPUT1: ${{needs.caller-job.outputs.output1}}
               run: |
-                echo ${{ needs.caller-job.outputs.output1 }}
+                echo OUTPUT1
