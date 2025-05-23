@@ -26,4 +26,5 @@ jobs:
     steps:
       - name: Input Message
         run: |
-          echo "output_job=${{inputs.input2}}" >> "$GITHUB_OUTPUT"
+          echo "output_job=${{inputs.input1}} ${{inputs.input2}}" >> "$GITHUB_OUTPUT"
+          
